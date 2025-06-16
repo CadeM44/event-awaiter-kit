@@ -7,6 +7,7 @@ A small, zero-dependency .NET Standard 2.0 library for “awaiting” any event 
 - [Introduction](#introduction)
 - [Examples](#examples)
 - [API Reference](#api-reference)
+- [Roadmap](#roadmap)
 
 ## Introduction
 
