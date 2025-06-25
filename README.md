@@ -166,7 +166,7 @@ async Task WatchFileChangesAsync(string filePath, CancellationToken ct = default
     };
 
     // Wait up to 30 seconds for the file to change
-    bool changed = await EventAwaiter.EventAwaiter.WaitForEventAsync<FileSystemEventArgs>(
+    bool changed = await EventAwaiter.WaitForEventAsync<FileSystemEventArgs>(
         handler => watcher.Changed += handler,
         handler => watcher.Changed -= handler,
         TimeSpan.FromSeconds(30),
