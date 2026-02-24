@@ -13,6 +13,15 @@ namespace EventAwaiterKit
 
         public static async Task<bool> WaitForEventAsync(Action<Action> addHandler, Action<Action> removeHandler, TimeSpan timeout, CancellationToken cancellationToken = default)
         {
+            if (addHandler == null) 
+                throw new ArgumentNullException(nameof(addHandler));
+            
+            if (removeHandler == null) 
+                throw new ArgumentNullException(nameof(removeHandler));
+            
+            if (timeout < Timeout.InfiniteTimeSpan)
+                throw new ArgumentOutOfRangeException(nameof(timeout), "Timeout must be Timeout.InfiniteTimeSpan or a non-negative TimeSpan.");
+
             cancellationToken.ThrowIfCancellationRequested();
 
             using (var timeoutCts = new CancellationTokenSource(timeout))
@@ -58,6 +67,15 @@ namespace EventAwaiterKit
 
         public static async Task<bool> WaitForEventAsync(Action<EventHandler> addHandler, Action<EventHandler> removeHandler, TimeSpan timeout, CancellationToken cancellationToken = default)
         {
+            if (addHandler == null) 
+                throw new ArgumentNullException(nameof(addHandler));
+            
+            if (removeHandler == null) 
+                throw new ArgumentNullException(nameof(removeHandler));
+            
+            if (timeout < Timeout.InfiniteTimeSpan)
+                throw new ArgumentOutOfRangeException(nameof(timeout), "Timeout must be Timeout.InfiniteTimeSpan or a non-negative TimeSpan.");
+
             cancellationToken.ThrowIfCancellationRequested();
 
             using (var timeoutCts = new CancellationTokenSource(timeout))
