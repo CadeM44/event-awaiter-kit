@@ -18,7 +18,7 @@ EventAwaiterKit simplifies asynchronous workflows by letting you `await` any .NE
 - **Memory-safe**: automatically unsubscribes handlers to avoid leaks.
 - **.NET Standard 2.0**: works across .NET Framework, .NET Core, Xamarin, Unity, and more.
 
-Whether you’re building UI dialogs, hardware integrations, or game logic, EventAwaiterKit streamlines waiting for events without boilerplate.
+EventAwaiterKit streamlines waiting for events without the usual event handling boilerplate.
 
 
 ## Examples
