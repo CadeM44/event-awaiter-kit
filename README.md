@@ -9,16 +9,15 @@ A small, zero-dependency .NET Standard 2.0 library for “awaiting” any event 
 - [API Reference](#api-reference)
 - [Roadmap](#roadmap)
 
+
 ## Introduction
 
-EventAwaiterKit simplifies asynchronous workflows by letting you `await` any .NET event or callback pattern as a `Task`. It provides:
+EventAwaiterKit lets you await .NET events and callbacks as Tasks, removing the usual event handling boilerplate. It provides:
 
 - **Timeout Support**: returns `false` if the event doesn’t fire within a specified `TimeSpan`.
 - **Cancellation**: propagates `OperationCanceledException` if the provided `CancellationToken` is canceled.
 - **Memory-safe**: automatically unsubscribes handlers to avoid leaks.
 - **.NET Standard 2.0**: works across .NET Framework, .NET Core, Xamarin, Unity, and more.
-
-EventAwaiterKit streamlines waiting for events without the usual event handling boilerplate.
 
 
 ## Examples
